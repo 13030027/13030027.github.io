@@ -1,0 +1,38 @@
+<h1>Add TV shows</h1>
+<hr/>
+<form name="myForm" class="myForm">
+
+	<p>
+		<label>Show :</label>
+		<input type="text" name="inputShow" ng-model="showname" required/>**
+	</p>
+
+	<p>
+		<label>Date :</label>
+		<input type="date" name="inputDate" ng-model="showdate" required/>**
+	</p>
+
+	<p>
+		<label>Season :</label>
+		<input type="number" name="inputSeason" ng-model="showseason" 
+		ng-pattern="/^[1-9][0-9]?$|^100$/"/>
+		<div ng-messages="myForm.inputSeason.$error">
+			<div class="error" ng-message="pattern">Invalid season</div>
+		</div>
+	</p>
+
+	<p>
+		<label>Episode :</label>
+		<input type="number" name="inputEpisode" ng-model="showepisode"
+        ng-pattern="/^[1-9][0-9]?$|^100$/"/>
+		<div ng-messages="myForm.inputEpisode.$error">
+			<div class="error" ng-message="pattern">Invalid episode</div>
+		</div>
+	</p>
+
+	<input type="button" class="btn btn-success" value="Add Show" ng-click="addShow()" ng-disabled="myForm.$invalid"/>
+    ({{counter}}) new shows added
+</form>
+
+
+

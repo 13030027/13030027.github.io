@@ -1,0 +1,22 @@
+<h1>Listing all TV shows</h1>
+<h5>Click on the shows to view and edit details</h5>
+<hr/>
+<p>
+Search: <input ng-model="query" />
+</p>
+<p>
+	<input type="checkbox" data-ng-model='watchnow'/> Only view available episodes
+</p>
+<h3>{{noshows}}</h3>
+<div class="list-group" ng-repeat="show in shows | filter:query | showWatchNow:watchnow track by $index">
+	<li class="list-group-item">
+		<span class="pull-right">
+			<input type="button" class="btn btn-danger" value="Delete Show" ng-click="deleteShow(show)"/>
+		</span>
+		<p class="lead">
+			<a href="#!/viewdetail/{{shows.indexOf(show)}}"> {{show.name}}</a><p>
+	    {{show.date | date:'mediumDate'}}
+	</li>
+</div>
+
+		

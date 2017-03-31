@@ -1,0 +1,18 @@
+#sidebar {
+  height: 100%;
+  padding-top: 20px;
+}
+#sidebar .nav {
+  width: 95%;
+}
+#sidebar li {
+  border:0 #f2f2f2 solid;
+  border-bottom-width:1px;
+}
+.list-group {
+  width: 450px;
+}
+.error{
+	color: red;
+}
+

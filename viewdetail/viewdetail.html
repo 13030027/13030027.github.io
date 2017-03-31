@@ -1,0 +1,41 @@
+<h1>Details of TV show</h1>
+<hr/>
+<form name="myForm" class="myForm">
+
+	<p>
+		<label>Show:</label>
+		<span ng-hide="show.updating">{{show.name}}</span>
+		<input type="text" ng-model="show.name" ng-show="show.updating" required/>
+	</p>
+
+	<p>
+		<label>Date:</label>
+		<span ng-hide="show.updating">{{show.date | date: "mediumDate"}}</span>
+		<input type="date" name="inputDate" ng-model="show.date" ng-show="show.updating" required/>
+	</p>
+
+	<p>
+		<label>Season:</label>
+		<span ng-hide="show.updating">{{show.season}}</span>
+		<input type="number" name="inputSeason" ng-model="show.season" ng-show="show.updating"
+        ng-pattern="/^[1-9][0-9]?$|^100$/"/>
+		<div ng-messages="myForm.inputSeason.$error">
+			<div class="error" ng-message="pattern">Invalid season</div>
+		</div>
+	</p>
+
+	<p>
+		<label>Episode:</label>
+		<span ng-hide="show.updating">{{show.episode}}</span>
+		<input type="number" name="inputEpisode" ng-model="show.episode" ng-show="show.updating"
+        ng-pattern="/^[1-9][0-9]?$|^100$/"/>
+		<div ng-messages="myForm.inputEpisode.$error">
+			<div class="error" ng-message="pattern">Invalid episode</div>
+		</div>
+	</p>
+
+	<input type="button" class="btn btn-success" value="Save Show" ng-click="updateShow(show)" ng-show="show.updating" ng-disabled="myForm.$invalid"/>
+	<input type="button" class="btn btn-warning" value="Edit Show" ng-click="show.updating=true;" ng-hide="show.updating"/>
+
+</form>
+
