@@ -20,7 +20,7 @@ describe('my app', function() {
         toMatch(/Show :/);
     });
 	
-	it('it should be able to add a new show, result is tested in view1', function() {
+    it('it should be able to add a new show, result is tested in view1', function() {
 		
 	  var date = new Date();
 	  
@@ -48,7 +48,7 @@ describe('my app', function() {
         toMatch(/Search:/);
     });
 	
-	it('should have 1 show and filter based on the search box input', function() {
+    it('should have 1 show and filter based on the search box input', function() {
       var showList = element.all(by.repeater('show in shows'));
       var query = element(by.model('query'));
 
